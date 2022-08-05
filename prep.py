@@ -48,3 +48,11 @@ letters_lenght = [ len(letter) for letter in words ]
 print(less_than_five)
 print(letters_lenght)
 print(len(vowels), len(string))
+
+
+# underscore usages 
+
+# extended unpacking 
+
+a, *_ , b = (3, 43,6 ,67,89, 90 ,4)
+print(*_)
