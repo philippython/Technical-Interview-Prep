@@ -27,3 +27,26 @@ print(person2.age)
  
 # print the result
 print(Person.isAdult(22))
+
+# MRO method resolution method
+
+# used in inheritance 
+# it's the order in which a method is serached in a classes inheritance
+
+class A:
+  def method(self):
+    print("A.method() called")
+
+class B:
+  def method(self):
+    print("B.method() called")
+
+class C(A, B):
+  pass
+
+class D(C, B):
+  pass
+
+d = D()
+d.method()
+
