@@ -64,7 +64,69 @@ print(de)
 de.popleft()
 print(de)
 # UserDict
+# Python program to demonstrate
+# userdict
+	
+	
+from collections import UserDict
+	
+	
+# Creating a Dictionary where
+# deletion is not allowed
+class MyDict(UserDict):
+		
+	# Function to stop deletion
+	# from dictionary
+	def __del__(self):
+		raise RuntimeError("Deletion not allowed")
+			
+	# Function to stop pop from
+	# dictionary
+	def pop(self, s = None):
+		raise RuntimeError("Deletion not allowed")
+			
+	# Function to stop popitem
+	# from Dictionary
+	def popitem(self, s = None):
+		raise RuntimeError("Deletion not allowed")
+		
+# Driver's code
+d = MyDict({'a':1,
+	'b': 2,
+	'c': 3})
+	
+d.pop(1)
 
 # UserList
+# Python program to demonstrate
+# userlist
+	
+	
+# Creating a List where
+# deletion is not allowed
+class MyList(UserList):
+		
+	# Function to stop deletion
+	# from List
+	def remove(self, s = None):
+		raise RuntimeError("Deletion not allowed")
+			
+	# Function to stop pop from
+	# List
+	def pop(self, s = None):
+		raise RuntimeError("Deletion not allowed")
+		
+# Driver's code
+L = MyList([1, 2, 3, 4])
+	
+print("Original List")
+	
+# Inserting to List"
+L.append(5)
+print("After Insertion")
+print(L)
+	
+# Deleting From List
+L.remove()
 
 # UserString
