@@ -1,3 +1,7 @@
+from datetime import datetime
+from xmlrpc.client import DateTime
+
+
 class Employee:
     def __init__(self, firstname, lastname, salary):
         self.firstname = firstname
@@ -49,9 +53,9 @@ print(less_than_five)
 print(letters_lenght)
 print(len(vowels), len(string))
 
-
-# underscore usages 
-
+print(datetime.now().year)
+arr = ["peas", "apples", "orange"]
+print(arr.index("orange"))
 # extended unpacking 
 
 a, *_ , b = (3, 43,6 ,67,89, 90 ,4)

@@ -1,3 +1,4 @@
+from datetime import datetime
 # Python program to demonstrate
 # use of class method and static method.
 from datetime import date
@@ -18,7 +19,19 @@ class Person:
     def isAdult(age):
         return age > 18
  
- 
+class Robot(Person):
+    def __init__(self, name, age, model, function_):
+      super().__init__(name, age)
+      self.model = model
+      self.function_ = function_
+    
+    @classmethod
+    def fromBuildDate(cls, name, year, model, function_):
+      return cls(name, datetime.now().year - year, model, function_)
+
+bot = Robot("roblox", 1, "BOT#($", "space engine")
+botx = Robot.fromBuildDate("robloxt", 2009, "BOTX", "humroid")
+print(botx.function_)
 person1 = Person('mayank', 21)
 person2 = Person.fromBirthYear('mayank', 1996)
  
