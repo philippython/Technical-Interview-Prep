@@ -29,3 +29,15 @@ print(sets)
 sets.remove(0)
 sets.update("k")
 print(sets)
+def myfunc(n):
+  return len(n)
+
+x = map(myfunc, ('apple', 'banana', 'cherry'))
+print(list[x])
+
+# def function(b):
+#     return 10 % b
+
+# y = map(function, (5, 2))
+# print(list[y])
+num = [7]
