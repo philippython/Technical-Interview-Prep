@@ -15,9 +15,11 @@ def get_anagrams(string):
         for figure in words_list:
                 if sorted(word) == sorted(figure) and len(word) == len(figure) and word != figure:
                         output[word] = [figure]
+
         if word not in output.keys():
             output[word] = []
-    print(output)
-        
+    return output
 
+
+    
 get_anagrams(string)
