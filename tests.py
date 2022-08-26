@@ -55,3 +55,65 @@
 # #Write your code above this row 👆
 #
 # # 🚨 Don't change the code below
+
+
+from math import sqrt
+
+
+file = {'Input.txt': 'Randy', 'Code.py': 'Stan', 'Output.txt': 'Randy'}
+
+
+def group_by_owners(files):
+    new_dict = {}
+    for k, v in files.items():
+        if  v in new_dict.keys():
+            new_dict[v] = new_dict[v] + [k]
+        else:    
+            new_dict[v] = [k]
+
+        
+    return new_dict
+
+
+print(group_by_owners(file))
+# def find_roots(a, b, c):
+#     ans1 = sqrt(-b ** 2 + 4 * a * c)  / 2 * a
+#     return ans1
+
+# print(find_roots(2, 10, 8))
+# class IceCreamMachine:
+#     def __init__(self, ingredients, toppings):
+#         self.ingredients = ingredients
+#         self.toppings = toppings
+#         self.result = []
+
+#     def scoops(self):
+#         if self.ingredients != []:
+#             for ingredients in self.ingredients:
+#                 new = [ingredients] + self.toppings
+#                 self.result.append(new)
+#             return self.result
+#         return self.result
+
+        
+            
+
+
+# machine = IceCreamMachine(["vanilla", "chocolate"], ["chocolate sauce"])
+# print(machine.scoops()) #should print: [['vanilla', 'chocolate sauce'], ['chocolate', 'chocolate sauce']]
+# def unique_names(names1, names2):
+#     return list(set(set(names1).union(set(names2))))
+
+
+
+# if __name__ == "__main__":
+#     names1 = ["Ava", "Emma", "Olivia"]
+#     names2 = ["Olivia", "Sophia", "Emma"]
+#     print(unique_names(names1, names2)) # should print Ava, Emma, Olivia, Sophia
+
+
+
+
+
+
+
