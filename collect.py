@@ -1,3 +1,5 @@
+from platform import python_implementation
+from sys import getrefcount
 from collections import Counter, deque, namedtuple, OrderedDict, defaultdict, ChainMap
 # collections module 
 # Counters
@@ -19,8 +21,8 @@ od['c'] = 3
 od['d'] = 4
     
 print('Before Deleting')
-# for key, value in od.items(): 
-    # print(key, value) 
+for key, value in od.items(): 
+    print(key, value) 
       
 # deleting element
 od.pop('a')
@@ -31,8 +33,11 @@ od['a'] = 1
 print('\nAfter re-inserting')
 for key, value in od.items(): 
     print(key, value)
-# DefaultDict
-# ChainMap
+
+dictionary = defaultdict(lambda: "ikeja")
+dictionary["key"] = "value"
+print(dictionary["k"])
+# # ChainMap
   
 from collections import ChainMap 
      
@@ -44,89 +49,89 @@ d4 =  {'l':2 , 'p': 7}
   
 # Defining the chainmap 
 c = ChainMap(d1, d2, d3).new_child(d4)
-print(c.keys())
+print(list(c.keys()))
 print(c)
-# NamedTuple
-Movie = namedtuple("Movies", ["title", "rating", "length"])
-M = Movie("Prey", 9.48, 120)
+# # NamedTuple
+# Movie = namedtuple("Movies", ["title", "rating", "length"])
+# M = Movie("Prey", 9.48, 120)
 
-li = ["Luck", 8.90, 170]
-luck = Movie._make(li)
-print(luck)
-print(M.rating)
-# DeQue
-de = deque(["meta", "amazon", "apple", "netlify"])
-print("Deque before insertion", de)
-de.appendleft("google")
-print("Deque after insertion", de)
-de.pop()
-print(de)
-de.popleft()
-print(de)
-# UserDict
-# Python program to demonstrate
-# userdict
+# li = ["Luck", 8.90, 170]
+# luck = Movie._make(li)
+# print(luck)
+# print(M.rating)
+# # DeQue
+# de = deque(["meta", "amazon", "apple", "netlify"])
+# print("Deque before insertion", de)
+# de.appendleft("google")
+# print("Deque after insertion", de)
+# de.pop()
+# print(de)
+# de.popleft()
+# print(de)
+# # UserDict
+# # Python program to demonstrate
+# # userdict
 	
 	
-from collections import UserDict
+# from collections import UserDict
 	
 	
-# Creating a Dictionary where
-# deletion is not allowed
-class MyDict(UserDict):
+# # Creating a Dictionary where
+# # deletion is not allowed
+# class MyDict(UserDict):
 		
-	# Function to stop deletion
-	# from dictionary
-	def __del__(self):
-		raise RuntimeError("Deletion not allowed")
+# 	# Function to stop deletion
+# 	# from dictionary
+# 	def __del__(self):
+# 		raise RuntimeError("Deletion not allowed")
 			
-	# Function to stop pop from
-	# dictionary
-	def pop(self, s = None):
-		raise RuntimeError("Deletion not allowed")
+# 	# Function to stop pop from
+# 	# dictionary
+# 	def pop(self, s = None):
+# 		raise RuntimeError("Deletion not allowed")
 			
-	# Function to stop popitem
-	# from Dictionary
-	def popitem(self, s = None):
-		raise RuntimeError("Deletion not allowed")
+# 	# Function to stop popitem
+# 	# from Dictionary
+# 	def popitem(self, s = None):
+# 		raise RuntimeError("Deletion not allowed")
 		
-# Driver's code
-d = MyDict({'a':1,
-	'b': 2,
-	'c': 3})
+# # Driver's code
+# d = MyDict({'a':1,
+# 	'b': 2,
+# 	'c': 3})
 	
-d.pop(1)
+# d.pop(1)
 
-# UserList
-# Python program to demonstrate
-# userlist
+# # UserList
+# # Python program to demonstrate
+# # userlist
 	
 	
-# Creating a List where
-# deletion is not allowed
-class MyList(UserList):
+# # Creating a List where
+# # deletion is not allowed
+# class MyList(UserList):
 		
-	# Function to stop deletion
-	# from List
-	def remove(self, s = None):
-		raise RuntimeError("Deletion not allowed")
+# 	# Function to stop deletion
+# 	# from List
+# 	def remove(self, s = None):
+# 		raise RuntimeError("Deletion not allowed")
 			
-	# Function to stop pop from
-	# List
-	def pop(self, s = None):
-		raise RuntimeError("Deletion not allowed")
+# 	# Function to stop pop from
+# 	# List
+# 	def pop(self, s = None):
+# 		raise RuntimeError("Deletion not allowed")
 		
-# Driver's code
-L = MyList([1, 2, 3, 4])
+# # Driver's code
+# L = MyList([1, 2, 3, 4])
 	
-print("Original List")
+# print("Original List")
 	
-# Inserting to List"
-L.append(5)
-print("After Insertion")
-print(L)
+# # Inserting to List"
+# L.append(5)
+# print("After Insertion")
+# print(L)
 	
-# Deleting From List
-L.remove()
+# # Deleting From List
+# L.remove()
 
-# UserString
+# # UserString
