@@ -51,4 +51,28 @@ bank_model = {
 }
 
 def login():
-    print(welcome to )
+    print("Welcome to TEEKAY Bank")
+    user = int(input("Log in as a bank 0fficial or a bank user? Enter 1. for official 2. for user "))
+
+    if user == 1 :
+        id = int(input("Enter your official id: "))
+        password = input("Enter your official password: ")
+
+        if password ==  bank_model["officials"][id]["password"] :
+            msg = "Welcome back %s " % (bank_model["officials"][id]["name"])
+            print(msg)
+
+        else :
+            print("password or id is invalid!!")
+            login()
+    else:
+        id = int(input("Enter your official id: "))
+        password = input("Enter your official password: ")
+
+        if password ==  bank_model["officials"][id]["password"] :
+            msg = "Welcome back %s " % (bank_model["officials"][id]["name"])
+            print(msg)
+
+        else :
+            print("password or id is invalid!!")
+            login()
